@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore an interactive globe and combine working specialist tools in the Weidu Fanling Lab.">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0c1220">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-__SCRIPT_HASH__'; style-src 'sha256-__STYLE_HASH__'; img-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <link rel="icon" href="data:,">
+  <title>Constellarium | Weidu Fanling Lab</title>
+  <style>__STYLE__</style>
+</head>
+<body>
+  <header class="mast">
+    <div class="shell mast-inner">
+      <a class="brand" href="https://weidufanling.au/"><svg aria-hidden="true" viewBox="0 0 32 32"><circle cx="16" cy="16" r="9"/><ellipse cx="16" cy="16" rx="15" ry="5.5" transform="rotate(-31 16 16)"/><circle class="brand-star" cx="24" cy="7" r="2"/></svg><span>Weidu Fanling <span class="han" lang="zh">未读凡灵</span></span></a>
+      <a class="back" href="https://weidufanling.au/lab/">← Back to the Lab</a>
+    </div>
+  </header>
+  <main class="shell">
+    <div class="opening">
+      <p class="eyebrow"><span class="status-light"></span> WEIDU FANLING LAB <span class="middle-dot">/</span> VERSION 0.2</p>
+      <h1>Constellarium</h1>
+      <p class="lede">Look around from inside the globe, or find a working specialist by what you want to do. Gather a few tools into a constellation and compare two rainfall scenarios together.</p>
+      <div class="opening-links">
+        <a class="action primary" id="find-tools" href="#live-specialists">Find a working specialist <span aria-hidden="true">↓</span></a>
+        <a href="#explore-title">Explore the globe</a>
+      </div>
+    </div>
+    <noscript><p class="notice">This experience needs JavaScript to turn the globe and compose a constellation.</p></noscript>
+    <div class="workspace">
+      <section class="panel explorer" aria-labelledby="explore-title">
+        <div class="panel-head">
+          <div><p class="eyebrow section-id">01 <span class="middle-dot">/</span> ILLUSTRATIVE GLOBE</p><h2 id="explore-title">Look around</h2></div>
+          <div class="view-switch" role="group" aria-label="Globe view">
+            <button type="button" id="outer-view" aria-pressed="true">Globe</button>
+            <button type="button" id="inner-view" aria-pressed="false">Inside</button>
+          </div>
+        </div>
+        <div class="sky" id="sky">
+          <canvas id="globe" aria-hidden="true"></canvas>
+          <div id="map-markers" class="map-markers"></div>
+          <p id="view-label" class="sky-label">EARTH · ORBIT VIEW</p>
+          <div class="directions" role="group" aria-label="Turn the globe">
+            <button type="button" data-pan="-24,0" aria-label="Turn left">←</button>
+            <button type="button" data-pan="0,20" aria-label="Look up">↑</button>
+            <button type="button" data-pan="0,-20" aria-label="Look down">↓</button>
+            <button type="button" data-pan="24,0" aria-label="Turn right">→</button>
+          </div>
+        </div>
+        <div class="controls">
+          <p class="hint" id="view-hint">Drag to turn the globe, use the arrows or jump to a place.</p>
+          <div class="choice-row"><span id="place-label">Place</span><div id="places" class="choices" role="group" aria-labelledby="place-label"></div></div>
+          <div class="choice-row"><span id="ring-label">Ring</span><div id="rings" class="choices rings" role="group" aria-labelledby="ring-label"></div></div>
+          <a class="ring-catalogue-link" id="browse-ring" href="#live-specialists">Browse working tools in this discipline ↓</a>
+        </div>
+        <section class="specialist" aria-labelledby="specialist-title">
+          <div><p class="eyebrow" id="specialist-kicker">ILLUSTRATIVE SPECIALIST</p><h3 id="specialist-title"></h3><p id="specialist-description"></p></div>
+          <button id="collect" class="action" aria-disabled="false" type="button">Add specialist <span aria-hidden="true">+</span></button>
+        </section>
+      </section>
+
+      <section class="panel compose" id="compose" aria-labelledby="compose-title">
+        <div class="panel-head">
+          <div><p class="eyebrow section-id">02 <span class="middle-dot">/</span> COMPOSE</p><h2 id="compose-title">Globe demo constellation</h2></div>
+          <span class="counter" id="counter">0 / 8</span>
+        </div>
+        <div class="formation">
+          <svg id="formation" aria-hidden="true" viewBox="0 0 360 155"></svg>
+          <p id="formation-label">Add a specialist to place the first star.</p>
+        </div>
+        <ul id="roster" class="roster" aria-label="Selected specialists" hidden></ul>
+        <div class="composition-controls">
+          <p class="hint">Choose up to two specialists per ring. Start a sample inquiry with any two.</p>
+          <div class="button-row"><button class="action primary" type="button" id="compose-button" disabled>Compose inquiry <span aria-hidden="true">↗</span></button><button class="subtle" type="button" id="reset" disabled>Clear</button></div>
+          <button class="subtle example" type="button" id="example">Try Victoria, Osaka and Paris</button>
+        </div>
+        <div id="inquiry" class="inquiry" hidden>
+          <p class="eyebrow">SAMPLE INQUIRY</p><h3 id="inquiry-title" tabindex="-1"></h3>
+          <p class="hint">These prepared prompts show how each discipline might begin.</p>
+          <ul id="inquiry-list"></ul>
+        </div>
+      </section>
+    </div>
+    <p id="announce" class="sr-only" role="status"></p>
+    __CATALOGUE__
+    __JOURNEY__
+    <section class="about" aria-labelledby="about-title">
+      <div><p class="eyebrow section-id">ABOUT CONSTELLARIUM</p><h2 id="about-title">What’s on the globe?</h2></div>
+      <div><p>The globe pins are fictional and show example places. The working specialists are browser tools adapted from Weidu’s own specialist configurations. They run the specific tasks shown on their cards.</p><p>The globe demo and catchment inputs clear when you reload. Saving a working constellation stores its name and tool choices in this browser. Real creator locations require verified opt-in before a pin can appear. Tools can be listed by discipline without a location.</p></div>
+    </section>
+  </main>
+  <footer class="shell foot">
+    <span>Constellarium · Weidu Fanling Lab</span>
+    <nav aria-label="Contribute to Constellarium"><a href="https://github.com/weidufanling/constellarium">Source and feedback on GitHub</a><a href="https://discord.gg/vQN7M84crF">Weidu Commons on Discord</a></nav>
+    <span>Map outlines from Natural Earth</span>
+  </footer>
+  <script>__SCRIPT__</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<section class="panel catchment" id="catchment-workbench" aria-labelledby="catchment-title">
+  <div class="catchment-head">
+    <p class="eyebrow section-id">04 <span class="middle-dot">/</span> TRY A QUESTION</p>
+    <h2 id="catchment-title" tabindex="-1">Compare two rainfall scenarios</h2>
+    <p>How does changing rainfall affect the water left over in an example catchment? Change the inputs, then see what each selected tool can tell you.</p>
+  </div>
+  <div class="catchment-mode">
+    <p id="catchment-selection" aria-live="polite">Choose a working specialist above to start.</p>
+    <a href="#live-specialists">Change specialists ↑</a>
+  </div>
+  <form id="catchment-form" novalidate>
+    <p id="catchment-assumptions" class="hint">Use one period for both scenarios. Catchment area, water returned to the air, and change in storage are held equal. A positive storage change means more water is stored at the end.</p>
+    <fieldset id="catchment-fields" aria-describedby="catchment-assumptions" disabled>
+      <legend class="sr-only">Catchment inputs</legend>
+    </fieldset>
+    <p class="catchment-error" id="catchment-error" role="alert" hidden></p>
+    <div class="button-row">
+      <button class="action primary" type="submit" id="run-catchment" disabled>Run selected tools <span aria-hidden="true">↗</span></button>
+      <button class="subtle" type="button" id="reset-catchment">Reset inputs</button>
+    </div>
+  </form>
+  <div id="catchment-results" class="catchment-results" hidden></div>
+  <div class="catchment-actions" id="catchment-actions" hidden>
+    <button class="action" type="button" id="download-catchment">Download result <span aria-hidden="true">↓</span></button>
+    <p class="hint">Includes your inputs, each contribution and its sources as a text file.</p>
+  </div>
+  <p class="catchment-limit">This is a fictional catchment and a simplified water balance. Use it to explore assumptions. It cannot forecast flooding, streamflow or ecological outcomes.</p>
+</section>

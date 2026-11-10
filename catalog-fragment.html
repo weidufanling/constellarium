@@ -1,0 +1,91 @@
+    <section class="panel capability-catalog" id="live-specialists" aria-labelledby="capability-title">
+      <div class="panel-head capability-heading">
+        <div>
+          <p class="eyebrow section-id">03 <span class="middle-dot">/</span> WORKING TOOLS</p>
+          <h2 id="capability-title">Find a specialist</h2>
+        </div>
+        <span class="counter">3 browser tools</span>
+      </div>
+      <div class="capability-content">
+        <p class="capability-intro">These browser tools adapt tasks from Weidu specialist configurations. Try one on its own or assemble a few for the catchment exercise.</p>
+        <p class="hint">Search by task. A specialist can appear here without a geographic pin. Creator locations are shown only after verified opt-in.</p>
+        <div class="capability-search-row">
+          <div class="capability-filter">
+            <label for="capability-search">Search tasks or specialists</label>
+            <input id="capability-search" type="search" placeholder="Try rainfall, habitats or sources" autocomplete="off">
+          </div>
+          <div class="capability-filter">
+            <label for="capability-ring">Filter by ring</label>
+            <select id="capability-ring">
+              <option value="all">All rings and topics</option>
+              <option value="math">Mathematics</option>
+              <option value="life">Living systems</option>
+              <option value="art">Poetry &amp; art</option>
+              <option value="space">Cosmos</option>
+              <option value="evidence">Evidence</option>
+            </select>
+          </div>
+          <p class="hint" id="capability-search-count" role="status">3 specialists</p>
+        </div>
+
+        <div class="capability-grid">
+          <article class="capability-card" data-specialist="hydrology" data-ring="math" data-search="water balance rainfall runoff catchment drainage rain retention storage evaporation flow calculate compare measurement">
+            <p class="eyebrow">WATER BALANCE</p>
+            <h3>Hydrology Learning and Water Management</h3>
+            <p>Compare water balances for two rainfall scenarios and check what the calculation assumes.</p>
+            <div class="capability-actions">
+              <button type="button" class="action" data-try aria-label="Try Hydrology Learning and Water Management">Try</button>
+              <button type="button" class="action capability-pick" data-pick aria-pressed="false" aria-label="Select Hydrology Learning and Water Management for your constellation">Select <span aria-hidden="true" hidden>✓</span></button>
+            </div>
+          </article>
+          <article class="capability-card" data-specialist="ecology" data-ring="life" data-search="ecology habitat habitats biodiversity living systems plants wildlife interpretation rainfall environment observations field wetlands water">
+            <p class="eyebrow">LIVING SYSTEMS</p>
+            <h3>Ecology</h3>
+            <p>Consider what a change in water availability could mean for a habitat and which observations would help.</p>
+            <div class="capability-actions">
+              <button type="button" class="action" data-try aria-label="Try Ecology">Try</button>
+              <button type="button" class="action capability-pick" data-pick aria-pressed="false" aria-label="Select Ecology for your constellation">Select <span aria-hidden="true" hidden>✓</span></button>
+            </div>
+          </article>
+          <article class="capability-card" data-specialist="audit" data-ring="evidence" data-search="research evidence audit source sources citations references verify claims provenance reproducibility assumptions confidence limits check">
+            <p class="eyebrow">EVIDENCE</p>
+            <h3>Research Reproducibility &amp; Evidence Auditor</h3>
+            <p>Check the sources and assumptions behind a catchment example and see what the evidence supports.</p>
+            <div class="capability-actions">
+              <button type="button" class="action" data-try aria-label="Try Research Reproducibility and Evidence Auditor">Try</button>
+              <button type="button" class="action capability-pick" data-pick aria-pressed="false" aria-label="Select Research Reproducibility and Evidence Auditor for your constellation">Select <span aria-hidden="true" hidden>✓</span></button>
+            </div>
+          </article>
+        </div>
+        <p id="capability-no-matches" class="capability-empty" hidden>No specialists match. Try another task or look across all rings and topics.</p>
+
+        <div class="capability-bench">
+          <div class="capability-selection" aria-labelledby="capability-selection-title">
+            <h3 id="capability-selection-title">Your working constellation</h3>
+            <p class="hint">Choose which specialists to include in the exercise.</p>
+            <p id="capability-selection-empty" class="capability-empty">Add a specialist from the catalogue to begin.</p>
+            <ul id="capability-selection-list" class="capability-list" aria-label="Selected working specialists" hidden></ul>
+            <div class="capability-actions">
+              <button type="button" class="action" id="capability-pick-all">Select the catchment trio</button>
+              <button type="button" class="action primary" id="capability-run" disabled>Open with selected specialists</button>
+              <button type="button" class="subtle" id="capability-clear" disabled>Clear selection</button>
+            </div>
+            <p class="sr-only" id="capability-selection-status" role="status"></p>
+          </div>
+
+          <div class="capability-saves" aria-labelledby="capability-saves-title">
+            <h3 id="capability-saves-title">Save for later</h3>
+            <p class="hint">Save the name and specialists in this browser. Exercise inputs and results are kept out of saved constellations.</p>
+            <form id="capability-save-form">
+              <label for="capability-name">Constellation name</label>
+              <div class="capability-actions capability-save-row">
+                <input id="capability-name" type="text" maxlength="60" autocomplete="off" placeholder="For example, Creek study" required>
+                <button type="submit" class="action" id="capability-save" disabled>Save constellation</button>
+              </div>
+            </form>
+            <p class="hint capability-save-status" id="capability-save-status" role="status"></p>
+            <ul class="capability-list" id="capability-saved" aria-label="Saved constellations" hidden></ul>
+          </div>
+        </div>
+      </div>
+    </section>
